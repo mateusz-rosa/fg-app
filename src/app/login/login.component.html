@@ -1,3 +1,9 @@
-<p>
-  login works!
-</p>
+<h2>Pleaso log-in</h2>
+<p>Login:</p>
+<input [(ngModel)]="login" type="text" placeholder="your login">
+<p>{{ login }}</p>
+<br>
+<p>Password:</p>
+<input [(ngModel)]="password" type="password" placeholder="password">
+
+<button (click)="onClick()">Log-in</button>
