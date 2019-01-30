@@ -14,7 +14,7 @@ import { ConfigurationComponent } from './configuration/configuration.component'
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
   ],
   imports: [
     BrowserModule,
