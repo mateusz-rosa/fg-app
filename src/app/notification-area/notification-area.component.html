@@ -1,0 +1,4 @@
+<div class="alert" *ngIf="notification" [ngClass]="notification.class" role="alert">
+    <div >{{notification.timestamp}}: {{notification.message}} <mat-icon class="close-icon" (click)="close()">close</mat-icon></div>
+    <div ></div>
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { LoginService } from '../login.service'
-import { Router, RouterState } from '@angular/router';
+import { LoginService } from '../services/login.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +9,11 @@ import { Router, RouterState } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  public login: string = "";
 
-  login: string = "";
-  password: string = "";
-  loginError: string = "";
+  public password: string = "";
+
+  public loginError: string = "";
 
   constructor(private loginService: LoginService,
     private router: Router) { }
@@ -20,22 +21,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick() {
+  logginIn() {
     console.log("LOGIN: " + this.login);
     console.log("PASS: " + this.password);
-    // this.loginService.login(this.login, this.password)
-    this.loginService.login('Fuero', 'FrontEndDeveloper!123')
+    this.loginService.login(this.login, this.password)
+    // this.loginService.login('Fuero', 'FrontEndDeveloper!123')
       .then(response => {
-        console.log(response);
         if (response == 200) {
-          //redirect to dashboard
-          console.log("redirect to dashboard");
           sessionStorage.setItem('loggedIn', 'true')
-          this.router.navigateByUrl("dashboard");
+          this.router.navigateByUrl("dashboard-nav");
         } else {
-          this.loginError = "wsad";
+          this.loginError = "Invalid login or password!";
         }
       });
   }
-
 }

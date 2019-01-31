@@ -1,88 +1,18 @@
-<div class="alert alert-primary" role="alert">
-    This is a primary alert—check it out!
-</div>
-
-<div *ngIf="loginError">
-    {{loginError}}
-</div>
-<h2>Pleaso log-in</h2>
-<p>Login:</p>
-<input [(ngModel)]="login" type="text" placeholder="your login">
-<p>{{ login }}</p>
-<br>
-<p>Password:</p>
-<input [(ngModel)]="password" type="password" placeholder="password">
-
-<button (click)="onClick()" [disabled]="!login || !password">Log-in</button>
-
-
-<div id="#akordeon-faq" role="tablist" aria-multiselectable="true">
-    <div class="card">
-        <div class="card-header" role="tab" id="pierwsze-pytanie">
-            <h5 class="mb-0">
-                <a data-toggle="collapse" data-parent="#akordeon-faq" href="#pierwsza-odpowiedz" aria-expanded="true"
-                    aria-controls="pierwsza-odpowiedz">
-                    Pierwsze pytanie
-                </a>
-            </h5>
-        </div>
-
-        <div id="pierwsza-odpowiedz" class="collapse in" role="tabpanel" aria-labelledby="pierwsze-pytanie">
-            <div class="card-body">
-                To jest odpowiedź na pierwsze pytanie
+<div class="wrapper">
+    <div class="login">
+        <div *ngIf="loginError">
+            <div class="loginError">
+                <p>{{loginError}}</p>
             </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-header" role="tab" id="drugie-pytanie">
-            <h5 class="mb-0">
-                <a class="collapsed" data-toggle="collapse" data-parent="#akordeon-faq" href="#druga-odpowiedz"
-                    aria-expanded="false" aria-controls="druga-odpowiedz">
-                    Drugie pytanie
-                </a>
-            </h5>
+        <h2>Please, log-in:</h2>
+        <div class="input">
+            <p>Login:</p>
+            <input [(ngModel)]="login" type="text" placeholder="your login">
+            <p>Password:</p>
+            <input [(ngModel)]="password" type="password" placeholder="password">
         </div>
-        <div id="druga-odpowiedz" class="collapse" role="tabpanel" aria-labelledby="drugie-ytanie">
-            <div class="card-body">
-                To jest odpowiedź na drugie pytanie.
-            </div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header" role="tab" id="trzecie-pytanie">
-            <h5 class="mb-0">
-                <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseExample"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    Button with data-target
-                </button>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident.
-                    </div>
-                </div>
-                <!-- <a class="collapsed" data-toggle="collapse" data-parent="#akordeon-faq" href="#trzecia-odpowiedz" aria-expanded="false" aria-controls="trzecia-odpowiedz">
-                Trzecie pytanie
-              </a> -->
-            </h5>
-        </div>
-        <div id="trzecia-odpowiedz" class="collapse" role="tabpanel" aria-labelledby="trzecie-pytanie">
-            <div class="card-body">
-                To jest odpowiedź na trzecie pytanie.
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-3 col-xs-1 p-l-0 p-r-0 collapse in" id="sidebar">
-            <div class="list-group panel">
-                <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar"
-                    aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="hidden-sm-down">Item 1</span>
-                </a>
-            </div>
-        </div>
+        <button class="button" (click)="logginIn()" [disabled]="!login || !password">Log-in</button>
+        <br>
     </div>
 </div>
