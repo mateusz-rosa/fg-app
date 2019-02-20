@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatInputModule, MatRippleModule } from '@angular/material';
 import { DashboardNavComponent } from './dashboard-nav/dashboard-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';

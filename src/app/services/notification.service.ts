@@ -45,7 +45,7 @@ export class NotificationService {
           timestamp: new Date().toDateString()
         })
         this.feed();
-      }, (5 + Math.ceil(Math.random() * 5)) * 1000);
+      }, (1 + Math.ceil(Math.random() * 3)) * 1000);
     }
   }
 }

@@ -5,3 +5,10 @@
 .close-icon{
   cursor: pointer;
 }
+
+@media(max-width: 700px){
+
+  .alert{
+    display: none;
+  }
+}

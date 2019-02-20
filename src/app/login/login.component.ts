@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public login: string = "";
+  public login: string = '';
 
-  public password: string = "";
+  public password: string = '';
 
-  public loginError: string = "";
+  public loginError: string = '';
 
   constructor(private loginService: LoginService,
     private router: Router) { }
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     console.log("LOGIN: " + this.login);
     console.log("PASS: " + this.password);
     this.loginService.login(this.login, this.password)
-    // this.loginService.login('Fuero', 'FrontEndDeveloper!123')
+    this.loginService.login('Fuero', 'FrontEndDeveloper!123')
       .then(response => {
         if (response == 200) {
           sessionStorage.setItem('loggedIn', 'true')
